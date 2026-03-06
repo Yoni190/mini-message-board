@@ -3,9 +3,9 @@ const app = express()
 
 const port = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-    res.send('Home')
-})
+const indexRouter = require('./routes/indexRoute')
+
+app.use(indexRouter)
 
 app.listen(port, (error) => {
     if(error) {
