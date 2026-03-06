@@ -24,4 +24,8 @@ function createMessage(req, res) {
     res.redirect('/')
 }
 
-module.exports = { getIndex, getMessageForm, createMessage }
+function showDetails(req, res) {
+    res.render('details', { message: messages[req.params.id]})
+}
+
+module.exports = { getIndex, getMessageForm, createMessage, showDetails }
