@@ -20,7 +20,7 @@ function getMessageForm(req, res) {
 }
 
 function createMessage(req, res) {
-    console.log(req.body)
+    messages.push({ text: req.body.message, user: req.body.name, data: new Date() })
     res.send(req.body)
 }
 
