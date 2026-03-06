@@ -20,8 +20,8 @@ function getMessageForm(req, res) {
 }
 
 function createMessage(req, res) {
-    messages.push({ text: req.body.message, user: req.body.name, data: new Date() })
-    res.send(req.body)
+    messages.push({ text: req.body.message, user: req.body.name, added: new Date() })
+    res.redirect('/')
 }
 
 module.exports = { getIndex, getMessageForm, createMessage }
