@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { getIndex } = require('../controllers/indexController')
+const indexController  = require('../controllers/indexController')
 
 const router = Router()
 
@@ -16,6 +16,7 @@ const messages = [
     }
 ]
 
-router.get('/', getIndex(messages))
+router.get('/', indexController.getIndex(messages))
+router.get('/new', indexController.getMessageForm)
 
 module.exports = router
