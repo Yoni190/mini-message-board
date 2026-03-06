@@ -18,5 +18,6 @@ const messages = [
 
 router.get('/', indexController.getIndex(messages))
 router.get('/new', indexController.getMessageForm)
+router.post('/new', indexController.createMessage)
 
 module.exports = router
