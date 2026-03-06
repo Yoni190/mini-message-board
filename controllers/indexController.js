@@ -8,4 +8,9 @@ function getMessageForm(req, res) {
     res.render('form')
 }
 
-module.exports = { getIndex, getMessageForm }
+function createMessage(req, res) {
+    console.log(req.body)
+    res.send(req.body)
+}
+
+module.exports = { getIndex, getMessageForm, createMessage }
