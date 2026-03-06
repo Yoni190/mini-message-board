@@ -1,5 +1,5 @@
 function getIndex (req, res) {
-    res.send('hello')
+    res.render('index')
 }
 
 module.exports = { getIndex }
