@@ -16,6 +16,6 @@ const messages = [
     }
 ]
 
-router.get('/', getIndex)
+router.get('/', getIndex(messages))
 
 module.exports = router

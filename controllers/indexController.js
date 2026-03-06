@@ -1,5 +1,8 @@
-function getIndex (req, res) {
-    res.render('index')
+function getIndex (messages) {
+
+    return function (req, res) {
+        res.render('index', { messages: messages })
+    }
 }
 
 module.exports = { getIndex }
