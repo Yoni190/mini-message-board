@@ -1,0 +1,20 @@
+.user-details, .message-content {
+    display: flex;
+    gap: 5px;
+}
+
+.message-content {
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.message-container {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    padding: 5px;
+    border-radius: 10px
+}
