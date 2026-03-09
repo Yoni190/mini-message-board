@@ -14,8 +14,9 @@ async function createMessage(req, res) {
     res.redirect('/')
 }
 
-function showDetails(req, res) {
-    res.render('details', { message: messages[req.params.id]})
+async function showDetails(req, res) {
+    const messages = await db.getMessage(req.params.id)
+    res.render('details', { message: messages[0] })
 }
 
 module.exports = { getIndex, getMessageForm, createMessage, showDetails }
