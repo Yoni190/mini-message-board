@@ -1,17 +1,7 @@
-const messages = [
-    {
-        text: 'Hi there!',
-        user: 'Amando',
-        added: new Date()
-    },
-    {
-        text: 'Hello World!',
-        user: 'Charles',
-        added: new Date()
-    }
-]
+const db = require('../db/queries')
 
-function getIndex (req, res) {
+async function getIndex (req, res) {
+    const messages = await db.getMessages()
     res.render('index', { messages: messages })
 }
 
