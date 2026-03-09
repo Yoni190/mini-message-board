@@ -5,11 +5,17 @@ async function getMessages() {
     return rows
 }
 
+async function getMessage(id) {
+    const { rows } = await pool.query('SELECT * FROM messages WHERE id = $1', [id])
+    return rows
+}
+
 async function createMessage(text, username) {
     await pool.query('INSERT INTO messages (text, username) VALUES ($1, $2)', [text, username])
 }
 
 module.exports = {
     getMessages,
-    createMessage
+    createMessage,
+    getMessage
 }
