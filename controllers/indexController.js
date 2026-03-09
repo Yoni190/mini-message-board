@@ -9,8 +9,8 @@ function getMessageForm(req, res) {
     res.render('form')
 }
 
-function createMessage(req, res) {
-    messages.push({ text: req.body.message, user: req.body.name, added: new Date() })
+async function createMessage(req, res) {
+    await db.createMessage(req.body.message, req.body.name)
     res.redirect('/')
 }
 
